@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Atualização Cadastral</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topo">Painel Administrativo — Atualização Cadastral</div>
+
+<div class="container" style="max-width: 1100px;">
+
+  <!-- TELA DE LOGIN -->
+  <div id="tela-login" class="login-box">
+    <div class="card">
+      <h1>Entrar</h1>
+      <p class="descricao">Acesso restrito ao administrador.</p>
+      <label>Email</label>
+      <input type="email" id="login-email">
+      <label>Senha</label>
+      <input type="password" id="login-senha">
+      <div class="acao-final">
+        <button id="btn-login">ENTRAR</button>
+        <span class="mensagem erro" id="msg-login"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAINEL -->
+  <div id="tela-painel" style="display:none;">
+    <div class="barra-admin">
+      <h1 style="margin:0;">Respostas recebidas</h1>
+      <div>
+        <span id="usuario-logado" class="badge"></span>
+        <button class="linkbtn" id="btn-logout">Sair</button>
+      </div>
+    </div>
+
+    <div class="filtros">
+      <input type="text" id="filtro-busca" placeholder="Buscar por nome, cliente, bairro...">
+      <select id="filtro-tipo">
+        <option value="">Todos os tipos</option>
+        <option>ATUALIZAÇÃO CADASTRAL (MESMO TITULAR)</option>
+        <option>ATUALIZAÇÃO CADASTRAL (NOVO TITULAR)</option>
+        <option>CLANDESTINO</option>
+        <option>NÃO VERIFICADO</option>
+        <option>INCREMENTO DE ECONOMIA</option>
+      </select>
+      <button class="linkbtn" id="btn-atualizar">🔄 Atualizar</button>
+      <button class="linkbtn" id="btn-exportar-csv">⬇ Exportar CSV</button>
+    </div>
+
+    <div class="card" id="card-total" style="padding:14px 20px;"></div>
+
+    <div class="tabela-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Colaborador</th>
+            <th>Cliente</th>
+            <th>Tipo</th>
+            <th>Bairro</th>
+            <th>Categoria</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-corpo">
+          <tr><td colspan="6">Carregando...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- MODAL DE DETALHE -->
+<div class="overlay" id="overlay-detalhe">
+  <div class="modal">
+    <button class="modal-fechar" id="fechar-modal">✕</button>
+    <div id="conteudo-modal"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/config.js"></script>
+<script src="assets/admin.js"></script>
+</body>
+</html>

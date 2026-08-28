@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário de Atualização Cadastral</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topo">Formulário de Atualização Cadastral — Metro I</div>
+
+<div class="container">
+
+  <div id="tela-form">
+    <div class="card">
+      <h1>FORMULÁRIO DE ATUALIZAÇÃO CADASTRAL</h1>
+      <p class="descricao">Você está iniciando um processo de atualização cadastral, muita atenção ao inserir os dados necessários para a atualização do cadastro.</p>
+      <p class="descricao"><em>* Indica uma pergunta obrigatória</em></p>
+    </div>
+
+    <form id="form-cadastral">
+
+      <div class="card">
+        <label>NOME DO COLABORADOR: <span class="obrig">*</span></label>
+        <input type="text" name="nome_colaborador" required>
+
+        <label>FAVOR, ANEXAR FOTO 1 DA FACHADA DO IMÓVEL:</label>
+        <input type="file" name="foto_fachada_1" accept="image/*">
+
+        <label>ANEXAR FOTO 2 DA FACHADA DO IMÓVEL:</label>
+        <input type="file" name="foto_fachada_2" accept="image/*">
+
+        <label>SELECIONE O TIPO DE ATUALIZAÇÃO CADASTRAL: <span class="obrig">*</span></label>
+        <div class="opcoes" data-radio="tipo_atualizacao" data-required="true">
+          <label class="opcao"><input type="radio" name="tipo_atualizacao" value="ATUALIZAÇÃO CADASTRAL (MESMO TITULAR)" required> ATUALIZAÇÃO CADASTRAL (MESMO TITULAR)</label>
+          <label class="opcao"><input type="radio" name="tipo_atualizacao" value="ATUALIZAÇÃO CADASTRAL (NOVO TITULAR)"> ATUALIZAÇÃO CADASTRAL (NOVO TITULAR)</label>
+          <label class="opcao"><input type="radio" name="tipo_atualizacao" value="CLANDESTINO"> CLANDESTINO</label>
+          <label class="opcao"><input type="radio" name="tipo_atualizacao" value="NÃO VERIFICADO"> NÃO VERIFICADO</label>
+          <label class="opcao"><input type="radio" name="tipo_atualizacao" value="INCREMENTO DE ECONOMIA"> INCREMENTO DE ECONOMIA</label>
+        </div>
+
+        <label>FAVOR, ANEXAR FOTO DO TERMO DE ATUALIZAÇÃO CADASTRAL:</label>
+        <input type="file" name="foto_termo" accept="image/*">
+      </div>
+
+      <div class="card">
+        <label>NOME DO CLIENTE:</label>
+        <input type="text" name="nome_cliente">
+
+        <label>TIPO DE LOGRADOURO: <span class="obrig">*</span></label>
+        <div class="opcoes">
+          <label class="opcao"><input type="radio" name="tipo_logradouro" value="RUA" required> RUA</label>
+          <label class="opcao"><input type="radio" name="tipo_logradouro" value="ESTRADA"> ESTRADA</label>
+          <label class="opcao"><input type="radio" name="tipo_logradouro" value="RODOVIA"> RODOVIA</label>
+          <label class="opcao"><input type="radio" name="tipo_logradouro" value="LADEIRA"> LADEIRA</label>
+          <label class="opcao"><input type="radio" name="tipo_logradouro" value="AVENIDA"> AVENIDA</label>
+        </div>
+
+        <label>NOME DO LOGRADOURO:</label>
+        <input type="text" name="nome_logradouro">
+
+        <label>NÚMERO: <span class="obrig">*</span></label>
+        <input type="text" name="numero" required>
+
+        <label>COMPLEMENTO: <span class="obrig">*</span></label>
+        <input type="text" name="complemento" required>
+
+        <label>BAIRRO: <span class="obrig">*</span></label>
+        <input type="text" name="bairro" required>
+
+        <label>TELEFONE (DDD + NÚMERO):</label>
+        <input type="tel" name="telefone">
+
+        <label>EMAIL:</label>
+        <input type="email" name="email">
+      </div>
+
+      <div class="card">
+        <label>TRATA-SE DE UMA INDICAÇÃO DE CLANDESTINO? <span class="obrig">*</span></label>
+        <div class="opcoes">
+          <label class="opcao"><input type="radio" name="indicacao_clandestino" value="SIM" required> SIM</label>
+          <label class="opcao"><input type="radio" name="indicacao_clandestino" value="NÃO"> NÃO</label>
+        </div>
+
+        <label>CATEGORIA: <span class="obrig">*</span></label>
+        <div class="opcoes">
+          <label class="opcao"><input type="radio" name="categoria" value="RESIDENCIAL" required> RESIDENCIAL</label>
+          <label class="opcao"><input type="radio" name="categoria" value="COMERCIAL"> COMERCIAL</label>
+          <label class="opcao"><input type="radio" name="categoria" value="PÚBLICO"> PÚBLICO</label>
+          <label class="opcao"><input type="radio" name="categoria" value="INDUSTRIAL"> INDUSTRIAL</label>
+          <label class="opcao"><input type="radio" name="categoria" value="NÃO IDENTIFICADO"> NÃO IDENTIFICADO</label>
+        </div>
+
+        <label>CPF/CNPJ:</label>
+        <input type="text" name="cpf_cnpj">
+
+        <label>RG:</label>
+        <input type="text" name="rg">
+
+        <label>ANEXAR FOTO DO DOCUMENTO (FRENTE)</label>
+        <input type="file" name="foto_documento_frente" accept="image/*">
+
+        <label>ANEXAR FOTO DO DOCUMENTO (VERSO)</label>
+        <input type="file" name="foto_documento_verso" accept="image/*">
+      </div>
+
+      <div class="card">
+        <label>O IMÓVEL POSSUI MEDIDOR? (HIDRÔMETRO) <span class="obrig">*</span></label>
+        <div class="opcoes">
+          <label class="opcao"><input type="radio" name="possui_medidor" value="SIM" required> SIM</label>
+          <label class="opcao"><input type="radio" name="possui_medidor" value="NÃO"> NÃO</label>
+          <label class="opcao"><input type="radio" name="possui_medidor" value="NÃO VERIFICADO"> NÃO VERIFICADO</label>
+        </div>
+
+        <label>QUAL A LOCALIZAÇÃO DO HIDRÔMETRO? <span class="obrig">*</span></label>
+        <div class="opcoes">
+          <label class="opcao"><input type="radio" name="localizacao_hidrometro" value="INTERNO" required> INTERNO</label>
+          <label class="opcao"><input type="radio" name="localizacao_hidrometro" value="EXTERNO"> EXTERNO</label>
+          <label class="opcao"><input type="radio" name="localizacao_hidrometro" value="NÃO POSSUI"> NÃO POSSUI</label>
+        </div>
+
+        <label>NÚMERO DO HIDRÔMETRO: <span class="obrig">*</span></label>
+        <input type="text" name="numero_hidrometro" required>
+
+        <label>ANEXAR FOTO O PADRÃO DE INSTALAÇÃO:</label>
+        <input type="file" name="foto_padrao_instalacao" accept="image/*">
+
+        <label>ANEXAR FOTO DO HIDRÔMETRO:</label>
+        <input type="file" name="foto_hidrometro" accept="image/*">
+      </div>
+
+      <div class="card">
+        <label>O HIDRÔMETRO INSTALADO ABASTECE APENAS UMA RESIDÊNCIA? <span class="obrig">*</span></label>
+        <div class="opcoes">
+          <label class="opcao"><input type="radio" name="hidrometro_unica_residencia" value="SIM" required> SIM</label>
+          <label class="opcao"><input type="radio" name="hidrometro_unica_residencia" value="NÃO"> NÃO</label>
+          <label class="opcao"><input type="radio" name="hidrometro_unica_residencia" value="NÃO VERIFICADO"> NÃO VERIFICADO</label>
+        </div>
+
+        <label>QUANTAS RESIDÊNCIAS? <span class="obrig">*</span></label>
+        <input type="number" name="quantidade_residencias" min="0" required>
+
+        <label>TRATA-SE DE CASAS OU PAVIMENTOS? <span class="obrig">*</span></label>
+        <div class="opcoes">
+          <label class="opcao"><input type="radio" name="casas_ou_pavimentos" value="CASAS" required> CASAS</label>
+          <label class="opcao"><input type="radio" name="casas_ou_pavimentos" value="PAVIMENTOS (APARTAMENTOS OU SOBRADOS)"> PAVIMENTOS (APARTAMENTOS OU SOBRADOS)</label>
+        </div>
+      </div>
+
+      <div class="card">
+        <label>O MORADOR ACEITOU REALIZAR A ATUALIZAÇÃO CADASTRAL? <span class="obrig">*</span></label>
+        <div class="opcoes">
+          <label class="opcao"><input type="radio" name="morador_aceitou" value="SIM" required> SIM</label>
+          <label class="opcao"><input type="radio" name="morador_aceitou" value="NÃO"> NÃO</label>
+          <label class="opcao"><input type="radio" name="morador_aceitou" value="NÃO VERIFICADO"> NÃO VERIFICADO</label>
+        </div>
+
+        <label>QUAL MOTIVO DA NÃO AUTORIZAÇÃO?</label>
+        <div class="opcoes">
+          <label class="opcao"><input type="radio" name="motivo_nao_autorizacao" value="IMÓVEL VAZIO"> IMÓVEL VAZIO</label>
+          <label class="opcao"><input type="radio" name="motivo_nao_autorizacao" value="IMÓVEL DEMOLIDO"> IMÓVEL DEMOLIDO</label>
+          <label class="opcao"><input type="radio" name="motivo_nao_autorizacao" value="IMÓVEL FECHADO"> IMÓVEL FECHADO</label>
+          <label class="opcao"><input type="radio" name="motivo_nao_autorizacao" value="ÁREA DE RISCO"> ÁREA DE RISCO</label>
+          <label class="opcao"><input type="radio" name="motivo_nao_autorizacao" value="CLIENTE SE RECUSOU"> CLIENTE SE RECUSOU</label>
+          <label class="opcao"><input type="radio" name="motivo_nao_autorizacao" value="ENDEREÇO NÃO LOCALIZADO"> ENDEREÇO NÃO LOCALIZADO</label>
+          <label class="opcao"><input type="radio" name="motivo_nao_autorizacao" value="OUTROS"> OUTROS</label>
+        </div>
+
+        <label>TRATA-SE UM CLIENTE CADASTRADO NA LIGHT? <span class="obrig">*</span></label>
+        <div class="opcoes">
+          <label class="opcao"><input type="radio" name="cliente_light" value="SIM" required> SIM</label>
+          <label class="opcao"><input type="radio" name="cliente_light" value="NÃO"> NÃO</label>
+        </div>
+
+        <label>OBSERVAÇÕES:</label>
+        <textarea name="observacoes"></textarea>
+      </div>
+
+      <div class="card acao-final">
+        <button type="submit" id="btn-enviar">ENVIAR</button>
+        <span class="mensagem" id="msg-envio"></span>
+      </div>
+    </form>
+  </div>
+
+  <div id="tela-sucesso" class="card tela-sucesso" style="display:none;">
+    <h2>✅ Formulário enviado com sucesso!</h2>
+    <p>Obrigado. Sua atualização cadastral foi registrada.</p>
+    <button class="botao" onclick="location.reload()">Enviar outra resposta</button>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
