@@ -179,10 +179,24 @@ async function abrirDetalhe(id) {
   if (camposComFoto.length > 0) {
     const grid = document.getElementById('grid-fotos');
     const itens = await Promise.all(camposComFoto.map(async (campo) => {
+      const valor = registro[campo];
+
+      // Fotos importadas do Forms antigo ficam como link direto do Google Drive
+      if (/^https?:\/\//i.test(valor)) {
+        return `
+          <a href="${valor}" target="_blank">
+            <div style="height:100px;display:flex;align-items:center;justify-content:center;background:#f1f3f4;border-radius:6px;border:1px solid #dcdfe4;font-size:12px;color:#5f6368;text-align:center;padding:6px;">
+              🔗 Abrir no Drive
+            </div>
+            <div class="legenda">${CAMPOS_FOTO[campo]}</div>
+          </a>`;
+      }
+
+      // Fotos enviadas pelo formulário novo ficam no Supabase Storage
       const { data, error } = await supabaseClient
         .storage
         .from('fotos-cadastral')
-        .createSignedUrl(registro[campo], 3600);
+        .createSignedUrl(valor, 3600);
       if (error || !data) return '';
       return `
         <a href="${data.signedUrl}" target="_blank">
