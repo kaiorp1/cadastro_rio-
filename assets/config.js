@@ -1,9 +1,8 @@
 // =========================================================
 // CONFIGURAÇÃO DO SUPABASE
-// Preencha com os dados do SEU projeto Supabase:
-// Project Settings > API > Project URL / anon public key
+// Projeto: riomaissaneamento
 // =========================================================
-const SUPABASE_URL = "https://lbeygpdcpkhkulvmwlan.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_jmOI21Hnk0HpVxR-AGW2Xg_Y5sIDymR";
+const SUPABASE_URL = "https://fcwgotsixkuxrdezenvz.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_MNlReXg0Vft7SNzqVAJVeA_7aIUgt6s";
 
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
